@@ -13,10 +13,22 @@ const BotaoPrimario = styled.button`
   border: 1px solid ${(props) => props.theme.cores.branco};
 `
 
-export default function Botao({ children }) {
-  return (
-    <>
-      <BotaoPrimario>{children}</BotaoPrimario>
-    </>
-  )
+const BotaoSecundario = styled.button`
+  background: ${(props) => props.theme.cores.primarias.roxo};
+  color: ${(props) => props.theme.cores.branco};
+  padding: ${(props) => props.theme.espacamentos.xs}
+    ${(props) => props.theme.espacamentos.s};
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid ${(props) => props.theme.cores.roxo};
+`
+
+export default function Botao({ children, variante = "primaria" }) {
+  if (variante === "primaria") {
+    return <BotaoPrimario>{children}</BotaoPrimario>
+  }
+  return <BotaoSecundario>{children}</BotaoSecundario>
 }

@@ -1,7 +1,7 @@
 import Cabecalho from "./componentes/Cabecalho"
 import Estilos from "./componentes/EstilosGlobais"
 import ProvedorTema from "./componentes/ProvedorTema"
-import Tipografia from "./componentes/Tipografia"
+import Rodape from "./componentes/Rodape"
 import AppRoutes from "./routes/routes"
 
 export default function App() {
@@ -11,6 +11,7 @@ export default function App() {
         <Estilos />
         <Cabecalho />
         <AppRoutes />
+        <Rodape />
       </ProvedorTema>
     </>
   )
