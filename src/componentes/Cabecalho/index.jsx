@@ -13,7 +13,7 @@ const Header = styled.header`
 `
 const InputEstilizado = styled.input`
   font-size: 16px;
-  color: ${(props) => props.theme.cores.preto};
+  color: ${(props) => props.theme.cores.primarias.preto};
   width: 180px;
   height: 36px;
   margin-right: 28px;
@@ -34,10 +34,10 @@ export default function Cabecalho() {
     <>
       <Header>
         <Row>
-          <Col xs={12} sm={3} md={3} lg={3}>
+          <Col xs={12} sm={2} md={2} lg={2}>
             <ImgEstilizada src={img} alt="" />
           </Col>
-          <Col xs={12} sm={4} md={4} lg={3}>
+          <Col xs={12} sm={12} md={3} lg={3}>
             <ListaMenu>
               <Tipografia variante="body2" componente="body2">
                 Home
@@ -53,7 +53,7 @@ export default function Cabecalho() {
               </Tipografia>
             </ListaMenu>
           </Col>
-          <Col xs={12} sm={5} md={5} lg={6}>
+          <Col xs={12} sm={12} md={7} lg={7}>
             <div
               style={{
                 textAlign: "right",

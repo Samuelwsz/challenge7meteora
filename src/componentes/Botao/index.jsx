@@ -20,10 +20,10 @@ const BotaoSecundario = styled.button`
     ${(props) => props.theme.espacamentos.s};
   box-sizing: border-box;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 23px;
   text-align: center;
   cursor: pointer;
-  border: 1px solid ${(props) => props.theme.cores.roxo};
+  border: 1px solid ${(props) => props.theme.cores.primarias.roxo};
 `
 
 export default function Botao({ children, variante = "primaria" }) {
