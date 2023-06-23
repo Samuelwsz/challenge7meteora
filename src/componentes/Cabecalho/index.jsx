@@ -5,6 +5,7 @@ import Tipografia from "../Tipografia"
 import Botao from "../Botao"
 
 import img from "./Logodesktop.png"
+import { useState } from "react"
 
 const Header = styled.header`
   background: ${(props) => props.theme.cores.primarias.preto};
@@ -34,10 +35,10 @@ export default function Cabecalho() {
     <>
       <Header>
         <Row>
-          <Col xs={12} sm={2} md={2} lg={2}>
+          <Col xs={1} sm={3} md={3} lg={2}>
             <ImgEstilizada src={img} alt="" />
           </Col>
-          <Col xs={12} sm={12} md={3} lg={3}>
+          <Col xs={12} sm={8} md={8} lg={3}>
             <ListaMenu>
               <Tipografia variante="body2" componente="body2">
                 Home
@@ -53,7 +54,7 @@ export default function Cabecalho() {
               </Tipografia>
             </ListaMenu>
           </Col>
-          <Col xs={12} sm={12} md={7} lg={7}>
+          <Col xs={10} sm={9} md={8} lg={7}>
             <div
               style={{
                 textAlign: "right",
