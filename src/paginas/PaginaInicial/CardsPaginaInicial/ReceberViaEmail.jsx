@@ -5,10 +5,10 @@ import Tipografia from "@/componentes/Tipografia"
 import Botao from "@/componentes/Botao"
 
 const InputEstilizado = styled.input`
-  font-size: 16px;
+  font-size: ${(props) => props.theme.espacamentos.s};
   color: ${(props) => props.theme.cores.preto};
   width: 50%;
-  height: 36px;
+  height: 37px;
 
   border: 1px solid ${(props) => props.theme.cores.primarias.preto};
 `

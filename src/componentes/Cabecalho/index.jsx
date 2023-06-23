@@ -12,17 +12,17 @@ const Header = styled.header`
   overflow-x: hidden;
 `
 const InputEstilizado = styled.input`
-  font-size: 16px;
+  font-size: ${(props) => props.theme.espacamentos.s};
   color: ${(props) => props.theme.cores.primarias.preto};
   width: 180px;
-  height: 36px;
-  margin-right: 28px;
+  height: ${(props) => props.theme.espacamentos.l};
+  margin-right: ${(props) => props.theme.espacamentos.m};
   border: 1px solid ${(props) => props.theme.cores.primarias.preto};
 `
 const ListaMenu = styled.ul`
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: ${(props) => props.theme.espacamentos.m};
 `
 
 const ImgEstilizada = styled.img`

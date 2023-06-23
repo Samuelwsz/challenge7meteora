@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "imagem": "/imagens/Categorias/Categoria camiseta.png",
+    "titulo": "Camiseta"
+  },
+  {
+    "id": "2",
+    "imagem": "/imagens/Categorias/Categoria Bolsa.png",
+    "titulo": "Bolsa"
+  },
+  {
+    "id": "3",
+    "imagem": "/imagens/Categorias/Categoria Calçados.png",
+    "titulo": "Calçados"
+  },
+  {
+    "id": "4",
+    "imagem": "/imagens/Categorias/Categoria calça.png",
+    "titulo": "Calça"
+  },
+  {
+    "id": "5",
+    "imagem": "/imagens/Categorias/Categoria casacos.png",
+    "titulo": "Casacos"
+  },
+  {
+    "id": "6",
+    "imagem": "/imagens/Categorias/Categoria óculos.png",
+    "titulo": "Óculos"
+  }
+]
