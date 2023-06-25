@@ -26,9 +26,9 @@ const BotaoSecundario = styled.button`
   border: 1px solid ${(props) => props.theme.cores.primarias.roxo};
 `
 
-export default function Botao({ children, variante = "primaria" }) {
+export default function Botao({ children, variante = "primaria", onClick }) {
   if (variante === "primaria") {
-    return <BotaoPrimario>{children}</BotaoPrimario>
+    return <BotaoPrimario onClick={onClick}>{children}</BotaoPrimario>
   }
-  return <BotaoSecundario>{children}</BotaoSecundario>
+  return <BotaoSecundario onClick={onClick}>{children}</BotaoSecundario>
 }
