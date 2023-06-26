@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import Tipografia from "@/componentes/Tipografia"
 import { Col } from "react-grid-system"
-import { Link } from "react-router-dom"
 
 import Botao from "@/componentes/Botao"
 
@@ -25,28 +24,30 @@ const TituloDiv = styled.div`
   padding: ${(props) => props.theme.espacamentos.s};
 `
 
-export default function CardsProdutos({ imagem, titulo, legenda, preco }) {
+export default function CardsProdutos({
+  imagem,
+  titulo,
+  legenda,
+  preco,
+  children,
+}) {
   return (
     <>
       <Col xs={12} sm={12} md={6} lg={6} xl={4}>
         <DivCard>
-          <Link>
-            <ImgCard src={imagem} />
-            <TituloDiv>
-              <Tipografia variante="body2" componente="body2">
-                {titulo}
-              </Tipografia>
-              <Tipografia variante="legenda" componente="legenda">
-                {legenda}
-              </Tipografia>
-              <Tipografia variante="body2Bold" componente="body2Bold">
-                {preco}
-              </Tipografia>
-              <div style={{ margin: "10px 0 0 0" }}>
-                <Botao variante="secundaria">Ver mais</Botao>
-              </div>
-            </TituloDiv>
-          </Link>
+          <ImgCard src={imagem} />
+          <TituloDiv>
+            <Tipografia variante="body2" componente="body2">
+              {titulo}
+            </Tipografia>
+            <Tipografia variante="legenda" componente="legenda">
+              {legenda}
+            </Tipografia>
+            <Tipografia variante="body2Bold" componente="body2Bold">
+              {preco}
+            </Tipografia>
+            {children}
+          </TituloDiv>
         </DivCard>
       </Col>
     </>

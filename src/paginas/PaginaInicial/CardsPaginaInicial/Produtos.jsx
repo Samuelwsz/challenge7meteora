@@ -10,8 +10,25 @@ import ImgOculos from "/imagens/Imagens Cards/óculos.png"
 import ImgBolsa from "/imagens/Imagens Cards/Bolsa.png"
 
 import CardsProdutos from "../UtilidadesPaginaInicial/CardsProdutos"
+import Botao from "@/componentes/Botao"
+import { useState } from "react"
+import ModalProdutos from "../ModalProdutos/modalcardprodutos"
 
 export default function Produtos() {
+  //modal
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const [produtoSelecionado, setProdutoSelecionado] = useState(null)
+
+  const closeModal = () => {
+    setModalIsOpen(false)
+  }
+
+  const abrirModal = (produto) => {
+    setProdutoSelecionado(produto)
+    setModalIsOpen(true)
+  }
+
   return (
     <>
       <Container>
@@ -29,13 +46,48 @@ export default function Produtos() {
               titulo="Camiseta Conforto"
               legenda="Multicores e tamanhos. Tecido de algodão 100%, fresquinho para o verão. Modelagem unissex."
               preco="R$ 70,00"
-            />
+            >
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgCamiseta,
+                      titulo: "Camiseta Conforto",
+                      legenda:
+                        "Multicores e tamanhos. Tecido de algodão 100%, fresquinho para o verão. Modelagem unissex.",
+                      preco: "R$ 70,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
+
             <CardsProdutos
               imagem={ImgCalca}
               titulo="Calça Alfaiataria"
               legenda="Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!"
               preco="R$ 180,00"
-            />
+            >
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgCalca,
+                      titulo: "Calça Alfaiataria",
+                      legenda:
+                        "Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!",
+                      preco: "R$ 180,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
             <CardsProdutos
               imagem={ImgTenis}
               titulo="Tênis Chunky"
@@ -63,6 +115,12 @@ export default function Produtos() {
           </Row>
         </div>
       </Container>
+
+      <ModalProdutos
+        isOpen={modalIsOpen}
+        closeModal={closeModal}
+        produto={produtoSelecionado}
+      />
     </>
   )
 }

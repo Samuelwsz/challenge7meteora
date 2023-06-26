@@ -5,6 +5,8 @@ import { useState } from "react"
 import Tipografia from "@/componentes/Tipografia"
 import Botao from "@/componentes/Botao"
 
+import Modal from "@/componentes/Modal"
+
 const InputEstilizado = styled.input`
   font-size: ${(props) => props.theme.espacamentos.s};
   color: ${(props) => props.theme.cores.preto};
@@ -44,6 +46,18 @@ export default function ReceberViaEmail() {
     return regex.test(email)
   }
 
+
+  //modal
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const openModal = () => {
+    setModalIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false)
+  }
+
   return (
     <>
       <DivEstilizada>
@@ -65,11 +79,20 @@ export default function ReceberViaEmail() {
                   onChange={trocarEmail}
                   placeholder="Digite seu email"
                 />
-                <Botao variante="secundaria" onClick={assinarNewsletter}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() => {
+                    assinarNewsletter(), openModal()
+                  }}
+                >
                   Enviar
                 </Botao>
+                <div>
+                  <Modal isOpen={modalIsOpen} onClose={closeModal}>
+                    {msgAlerta && <div>{msgAlerta}</div>}
+                  </Modal>
+                </div>
               </div>
-              {msgAlerta && <div>{msgAlerta}</div>}
             </Col>
           </Row>
         </Container>
