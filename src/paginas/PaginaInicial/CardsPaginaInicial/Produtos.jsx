@@ -93,25 +93,94 @@ export default function Produtos() {
               titulo="Tênis Chunky"
               legenda="Snicker casual com solado mais alto e modelagem robusta. Modelo unissex."
               preco="R$ 250,00"
-            />
+            >
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgTenis,
+                      titulo: "Tênis Chunky",
+                      legenda:
+                        "Snicker casual com solado mais alto e modelagem robusta. Modelo unissex.",
+                      preco: "R$ 250,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
             <CardsProdutos
               imagem={ImgJaqueta}
               titulo="Jaqueta Jeans"
               legenda="Modelo unissex oversized com gola de camurça. Atemporal e autêntica!"
               preco="R$ 150,00"
-            />
+            >
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgJaqueta,
+                      titulo: "Jaqueta Jeans",
+                      legenda:
+                        "Modelo unissex oversized com gola de camurça. Atemporal e autêntica!",
+                      preco: "R$ 150,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
             <CardsProdutos
               imagem={ImgOculos}
               titulo="Óculos Redondo"
               legenda="Armação metálica em grafite com lentes arredondadas. Sem erro!"
               preco="R$ 120,00"
-            />
+            >
+              {" "}
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgOculos,
+                      titulo: "Óculos Redondo",
+                      legenda:
+                        "Armação metálica em grafite com lentes arredondadas. Sem erro!",
+                      preco: "R$ 120,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
             <CardsProdutos
               imagem={ImgBolsa}
               titulo="Bolsa coringa"
               legenda="Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!"
               preco="R$ 120,00"
-            />
+            >
+              <div style={{ margin: "10px 0 0 0" }}>
+                <Botao
+                  variante="secundaria"
+                  onClick={() =>
+                    abrirModal({
+                      imagem: ImgBolsa,
+                      titulo: "Bolsa coringa",
+                      legenda:
+                        "Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!",
+                      preco: "R$ 120,00",
+                    })
+                  }
+                >
+                  Ver mais
+                </Botao>
+              </div>
+            </CardsProdutos>
           </Row>
         </div>
       </Container>

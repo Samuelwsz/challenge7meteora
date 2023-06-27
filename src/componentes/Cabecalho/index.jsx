@@ -31,6 +31,7 @@ const ImgEstilizada = styled.img`
 `
 
 export default function Cabecalho() {
+
   return (
     <>
       <Header>

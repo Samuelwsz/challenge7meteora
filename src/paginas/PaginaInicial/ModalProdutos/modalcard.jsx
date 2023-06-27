@@ -17,7 +17,7 @@ const DivModal = styled.div`
   width: 700px;
 `
 
-export default function ModalCardProduto({ isOpen, onClose, children }) {
+export default function ModalCardProduto({ isOpen, children }) {
   if (!isOpen) return null
 
   return (
