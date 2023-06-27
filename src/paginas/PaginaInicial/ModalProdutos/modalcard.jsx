@@ -14,9 +14,7 @@ const ModalOverlay = styled.div`
 
 const DivModal = styled.div`
   background-color: ${(props) => props.theme.cores.branco};
-  width: 400px;
-  padding: ${(props) => props.theme.espacamentos.m}
-  border-radius: 4px;
+  width: 700px;
 `
 
 export default function ModalCardProduto({ isOpen, onClose, children }) {
