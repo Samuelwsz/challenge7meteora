@@ -5,7 +5,6 @@ import Tipografia from "../Tipografia"
 import Botao from "../Botao"
 
 import img from "./Logodesktop.png"
-import { useState } from "react"
 
 const Header = styled.header`
   background: ${(props) => props.theme.cores.primarias.preto};
@@ -31,7 +30,6 @@ const ImgEstilizada = styled.img`
 `
 
 export default function Cabecalho() {
-
   return (
     <>
       <Header>
@@ -62,7 +60,7 @@ export default function Cabecalho() {
                 margin: "20px",
               }}
             >
-              <InputEstilizado placeholder="Digite o produto" />
+              <InputEstilizado placeholder="Digite o produto" type="text" />
               <Botao>Buscar</Botao>
             </div>
           </Col>
