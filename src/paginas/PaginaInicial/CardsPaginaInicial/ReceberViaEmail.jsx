@@ -46,6 +46,9 @@ export default function ReceberViaEmail() {
     return regex.test(email)
   }
 
+  const limparInput = () => {
+    setEmail("")
+  }
 
   //modal
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -82,7 +85,7 @@ export default function ReceberViaEmail() {
                 <Botao
                   variante="secundaria"
                   onClick={() => {
-                    assinarNewsletter(), openModal()
+                    assinarNewsletter(), openModal(), limparInput()
                   }}
                 >
                   Enviar
