@@ -10,11 +10,14 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `
 
 const DivModal = styled.div`
   background-color: ${(props) => props.theme.cores.branco};
   width: 700px;
+
+ 
 `
 
 export default function ModalCardProduto({ isOpen, children }) {

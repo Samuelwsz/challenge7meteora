@@ -2,8 +2,6 @@ import styled from "@emotion/styled"
 import Tipografia from "@/componentes/Tipografia"
 import { Col } from "react-grid-system"
 
-import Botao from "@/componentes/Botao"
-
 const DivCard = styled.div`
   width: 360px;
   background-color: ${(props) => props.theme.cores.branco};
@@ -37,7 +35,7 @@ export default function CardsProdutos({
         <DivCard>
           <ImgCard src={imagem} />
           <TituloDiv>
-            <Tipografia variante="body2" componente="body2">
+            <Tipografia variante="body2Bold" componente="body2Bold">
               {titulo}
             </Tipografia>
             <Tipografia variante="legenda" componente="legenda">

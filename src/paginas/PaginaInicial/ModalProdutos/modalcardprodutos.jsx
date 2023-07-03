@@ -9,6 +9,8 @@ import Botao from "@/componentes/Botao"
 import CaixaDeSelecao from "./CaixaDeSelecao"
 import Tipografia from "@/componentes/Tipografia"
 
+import tamanhoProdutosAPI from "@/json/tamanhosProdutos.json"
+
 const DivTopo = styled.header`
   background-color: ${(props) => props.theme.cores.primarias.preto};
   color: ${(props) => props.theme.cores.branco};
@@ -89,11 +91,14 @@ const ModalProdutos = ({ isOpen, closeModal, produto }) => {
               Tamanho:
             </Tipografia>
             <DivSelecao>
-              <CaixaDeSelecao tituloCaixa="P" />
-              <CaixaDeSelecao tituloCaixa="PP" />
-              <CaixaDeSelecao tituloCaixa="M" />
-              <CaixaDeSelecao tituloCaixa="G" />
-              <CaixaDeSelecao tituloCaixa="GG" />
+              {tamanhoProdutosAPI.map((tamanho) => {
+                return (
+                  <CaixaDeSelecao
+                    key={tamanho.id}
+                    tituloCaixa={tamanho.titulo}
+                  />
+                )
+              })}
             </DivSelecao>
             <Botao variante="secundaria">Adicionar à sacola</Botao>
           </AreaConteudo>
