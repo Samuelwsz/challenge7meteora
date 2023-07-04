@@ -58,13 +58,16 @@ const BannerImagesCelular = [
     imagem: Banner3Celular,
   },
 ]
-
 const ImgEstilizado = styled.img`
   width: 100%;
   object-fit: cover;
 `
-const FigureEstilizada = styled.div`
-  margin: 0;
+const CustomPaginationBullet = styled.span`
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 0 8px;
 `
 
 register()
@@ -105,7 +108,18 @@ export default function Banner() {
   return (
     <Row>
       <Col>
-        <Swiper slidesPerView={1} pagination={{ clickable: true }} navigation>
+        <Swiper
+          style={{
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+            "--swiper-pagination-bullet-size": "10px",
+          }}
+          slidesPerView={1}
+          pagination={{
+            clickable: true,
+          }}
+          navigation
+        >
           {bannerImages.map((item) => (
             <SwiperSlide key={item.id}>
               <ImgEstilizado src={item.imagem} />
