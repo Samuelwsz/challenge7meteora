@@ -8,29 +8,23 @@ import { useContext, useState } from "react"
 import ModalProdutos from "../ModalProdutos/modalcardprodutos"
 
 import produtosAPI from "@/json/produtos.json"
-import AppContext from "../../../contexto/AppContext"
+import AppContext from "@/contexto/AppContext"
+import AppContextCategoria from "@/contexto/FiltrarCategoria"
 
 export default function Produtos() {
   const { filtroProduto } = useContext(AppContext)
+  const { filtroCategoria } = useContext(AppContextCategoria)
 
-  const produtosFiltrados = produtosAPI.filter((produto) =>
-    produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
+  const produtosFiltrados = produtosAPI.filter(
+    (produto) =>
+      (filtroProduto
+        ? produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
+        : true) &&
+      (filtroCategoria
+        ? produto.titulo &&
+          produto.titulo.toLowerCase().includes(filtroCategoria.toLowerCase())
+        : true)
   )
-  /*
-  const produtosFiltrados = produtosAPI.filter((produto) => {
-    if (filtroCategoria && filtroProduto) {
-      return (
-        produto.categoria === filtroCategoria &&
-        produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
-      )
-    } else if (filtroCategoria) {
-      return produto.categoria === filtroCategoria
-    } else if (filtroProduto) {
-      return produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
-    }
-    return true
-  })
-*/
   //modal
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [produtoSelecionado, setProdutoSelecionado] = useState(null)

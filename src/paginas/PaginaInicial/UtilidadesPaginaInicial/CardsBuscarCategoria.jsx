@@ -8,6 +8,7 @@ const DivCard = styled.div`
   margin: auto;
   overflow: hidden;
   margin-bottom: 20px;
+  cursor: pointer;
 `
 const ImgCard = styled.img`
   width: 100%;
@@ -22,11 +23,11 @@ export default function CardsBuscarCategoria({ imagem, titulo, onClick }) {
   return (
     <>
       <Col xs={12} sm={6} md={4} lg={4} xl={2}>
-        <DivCard>
+        <DivCard onClick={onClick}>
           <ImgCard src={imagem} />
           <TituloDiv>
             <Tipografia variante="body2" componente="body2">
-              <button onClick={onClick}>{titulo}</button>
+              {titulo}
             </Tipografia>
           </TituloDiv>
         </DivCard>

@@ -24,6 +24,7 @@ const BannerImages = [
   {
     id: 2,
     imagem: Banner2,
+    frase: "COLEÇÃO ATEMPORAL",
   },
   {
     id: 3,
@@ -38,6 +39,7 @@ const BannerImagesTablet = [
   {
     id: 2,
     imagem: Banner2Tablet,
+    frase: "COLEÇÃO ATEMPORAL",
   },
   {
     id: 3,
@@ -52,6 +54,7 @@ const BannerImagesCelular = [
   {
     id: 2,
     imagem: Banner2Celular,
+    frase: "COLEÇÃO ATEMPORAL",
   },
   {
     id: 3,
@@ -61,13 +64,19 @@ const BannerImagesCelular = [
 const ImgEstilizado = styled.img`
   width: 100%;
   object-fit: cover;
+  position: relative;
 `
-const CustomPaginationBullet = styled.span`
-  width: 10px;
-  height: 2px;
-  background-color: #fff;
-  opacity: 0.5;
-  margin: 0 8px;
+const FraseImagem = styled.p`
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  right: 150px;
+  margin-right: 20px;
+  transform: translateY(-50%);
 `
 
 register()
@@ -123,6 +132,7 @@ export default function Banner() {
           {bannerImages.map((item) => (
             <SwiperSlide key={item.id}>
               <ImgEstilizado src={item.imagem} />
+              {item.id === 2 && <FraseImagem>{item.frase}</FraseImagem>}
             </SwiperSlide>
           ))}
         </Swiper>

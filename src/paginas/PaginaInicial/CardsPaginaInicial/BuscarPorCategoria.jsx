@@ -1,11 +1,26 @@
 import { Col, Container, Row } from "react-grid-system"
 import Tipografia from "@/componentes/Tipografia"
 
+import Botao from "@/componentes/Botao"
 import CardsBuscarCategoria from "../UtilidadesPaginaInicial/CardsBuscarCategoria"
-
 import categoriaJson from "@/json/categoria.json"
+import AppContextCategoria from "@/contexto/FiltrarCategoria"
+import { useContext } from "react"
+import AppContext from '@/contexto/AppContext'
 
 export default function BuscarPorCategoria() {
+  const { atualizarFiltroCategoria } = useContext(AppContextCategoria)
+  const { setFiltroProduto } = useContext(AppContext)
+
+  const filtrarPorCategoria = (categoria) => {
+    atualizarFiltroCategoria(categoria)
+  }
+
+  const resetarFiltros = () => {
+    atualizarFiltroCategoria("") // Limpa o filtro de categoria
+    setFiltroProduto("") // Limpa o filtro de produto
+  }
+
   return (
     <>
       <Container>
@@ -18,28 +33,19 @@ export default function BuscarPorCategoria() {
         </Row>
         <Row>
           {categoriaJson.map((card) => {
-            return <CardsBuscarCategoria key={card.id} {...card} />
+            return (
+              <CardsBuscarCategoria
+                key={card.id}
+                {...card}
+                onClick={() => filtrarPorCategoria(card.titulo)}
+              />
+            )
           })}
+        </Row>
+        <Row justify="center" style={{ textAlign: "center" }}>
+          <Botao onClick={resetarFiltros}>Limpar</Botao>
         </Row>
       </Container>
     </>
   )
 }
-
-/*
- <CardsBuscarCategoria imagem={ImgCamiseta} titulo="Camiseta" />
-          <CardsBuscarCategoria imagem={ImgBolsa} titulo="Bolsas" />
-          <CardsBuscarCategoria imagem={ImgCalcados} titulo="Calçados" />
-          <CardsBuscarCategoria imagem={ImgCalcas} titulo="Calças" />
-          <CardsBuscarCategoria imagem={ImgCasacos} titulo="Casacos" />
-          <CardsBuscarCategoria imagem={ImgOculos} titulo="Óculos" />
-
-
-          
-import ImgCamiseta from "/imagens/Categorias/Categoria camiseta.png"
-import ImgBolsa from "/imagens/Categorias/Categoria Bolsa.png"
-import ImgCalcados from "/imagens/Categorias/Categoria Calçados.png"
-import ImgCalcas from "/imagens/Categorias/Categoria calça.png"
-import ImgCasacos from "/imagens/Categorias/Categoria casacos.png"
-import ImgOculos from "/imagens/Categorias/Categoria óculos.png"
-*/
