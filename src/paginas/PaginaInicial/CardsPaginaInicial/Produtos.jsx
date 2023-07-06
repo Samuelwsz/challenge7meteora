@@ -4,15 +4,35 @@ import Tipografia from "@/componentes/Tipografia"
 
 import CardsProdutos from "../UtilidadesPaginaInicial/CardsProdutos"
 import Botao from "@/componentes/Botao"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import ModalProdutos from "../ModalProdutos/modalcardprodutos"
 
 import produtosAPI from "@/json/produtos.json"
+import AppContext from "../../../contexto/AppContext"
 
 export default function Produtos() {
+  const { filtroProduto } = useContext(AppContext)
+
+  const produtosFiltrados = produtosAPI.filter((produto) =>
+    produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
+  )
+  /*
+  const produtosFiltrados = produtosAPI.filter((produto) => {
+    if (filtroCategoria && filtroProduto) {
+      return (
+        produto.categoria === filtroCategoria &&
+        produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
+      )
+    } else if (filtroCategoria) {
+      return produto.categoria === filtroCategoria
+    } else if (filtroProduto) {
+      return produto.titulo.toLowerCase().includes(filtroProduto.toLowerCase())
+    }
+    return true
+  })
+*/
   //modal
   const [modalIsOpen, setModalIsOpen] = useState(false)
-
   const [produtoSelecionado, setProdutoSelecionado] = useState(null)
 
   const closeModal = () => {
@@ -36,7 +56,7 @@ export default function Produtos() {
             </Col>
           </Row>
           <Row>
-            {produtosAPI.map((produto) => {
+            {produtosFiltrados.map((produto) => {
               return (
                 <CardsProdutos key={produto.id} {...produto}>
                   <div style={{ margin: "10px 0 0 0" }}>
