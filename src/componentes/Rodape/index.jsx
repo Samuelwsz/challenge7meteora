@@ -15,7 +15,7 @@ export default function Rodape() {
         <Row align="center">
           <Col style={{ textAlign: "center" }}>
             <Tipografia variante="body2" componente="body2">
-              2023 © Desenvolvido por Alura | Projeto fictício sem fins
+              2023 © Desenvolvido por Samuel / Alura | Projeto fictício sem fins
               comerciais.
             </Tipografia>
           </Col>

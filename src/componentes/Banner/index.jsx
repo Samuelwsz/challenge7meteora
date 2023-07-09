@@ -24,11 +24,12 @@ const BannerImages = [
   {
     id: 2,
     imagem: Banner2,
-    frase: "COLEÇÃO ATEMPORAL",
+    frase: "Estilo e qualidade para durar. ",
   },
   {
     id: 3,
     imagem: Banner3,
+    frase: "Alto impacto visual, baixo impacto ambiental!",
   },
 ]
 const BannerImagesTablet = [
@@ -39,11 +40,12 @@ const BannerImagesTablet = [
   {
     id: 2,
     imagem: Banner2Tablet,
-    frase: "COLEÇÃO ATEMPORAL",
+    frase: "Estilo e qualidade para durar. ",
   },
   {
     id: 3,
     imagem: Banner3Tablet,
+    frase: "Alto impacto visual, baixo impacto ambiental!",
   },
 ]
 const BannerImagesCelular = [
@@ -54,11 +56,12 @@ const BannerImagesCelular = [
   {
     id: 2,
     imagem: Banner2Celular,
-    frase: "COLEÇÃO ATEMPORAL",
+    frase: "Estilo e qualidade para durar. ",
   },
   {
     id: 3,
     imagem: Banner3Celular,
+    frase: "Alto impacto visual, baixo impacto ambiental!",
   },
 ]
 const ImgEstilizado = styled.img`
@@ -69,13 +72,20 @@ const ImgEstilizado = styled.img`
 const FraseImagem = styled.p`
   position: absolute;
   top: 50%;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+  color: ${(props) => props.theme.cores.branco};
+  font-size: ${(props) => props.theme.espacamentos.m};
   padding: 10px 20px;
-  border-radius: 10px;
-  right: 150px;
-  margin-right: 20px;
+  right: 90px;
+  transform: translateY(-50%);
+`
+
+const FraseImagem3 = styled.p`
+  position: absolute;
+  top: 50%;
+  color: ${(props) => props.theme.cores.branco};
+  font-size: ${(props) => props.theme.espacamentos.m};
+  padding: 10px 20px;
+  left: 90px;
   transform: translateY(-50%);
 `
 
@@ -133,6 +143,7 @@ export default function Banner() {
             <SwiperSlide key={item.id}>
               <ImgEstilizado src={item.imagem} />
               {item.id === 2 && <FraseImagem>{item.frase}</FraseImagem>}
+              {item.id === 3 && <FraseImagem3>{item.frase}</FraseImagem3>}
             </SwiperSlide>
           ))}
         </Swiper>
