@@ -20,3 +20,6 @@ O design das telas do desafio está disponível no Figma.
 
 [Link do Figma](https://www.figma.com/file/2TLgt8UjsWUViWlmpXu5Fz/Challenge-Front-end-%7C-Loja-Meteora?type=design&node-id=2518-2722&mode=design&t=oWeL8T54i7aCQwmN-0)
 
+# Projeto finalizado
+
+[Link do projeto](https://challenge7meteora.vercel.app/)
